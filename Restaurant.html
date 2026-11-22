@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Great Indian Kitchen - Restaurant Menu</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fffaf3;
+            color: #2f241f;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #3d1810;
+            color: #ffffff;
+            text-align: center;
+            padding: 36px 20px 26px 20px;
+            border-bottom: 4px solid #d4af37;
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            color: #f4c95d;
+            letter-spacing: 1.5px;
+            margin-bottom: 8px;
+        }
+
+        .tagline {
+            font-size: 15px;
+            color: #f5dec9;
+            margin-bottom: 22px;
+        }
+
+        nav {
+            padding-top: 14px;
+            border-top: 1px solid rgb(255, 255, 255, 0.2);
+        }
+
+        nav a {
+            display: inline-block;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            padding: 8px 22px;
+            margin: 4px 8px;
+            border: 1px solid #d4af37;
+            border-radius: 25px;
+        }
+
+        nav a:hover {
+            background-color: #d4af37;
+            color: #3d1810;
+        }
+
+        main {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 35px 20px;
+        }
+
+        .menu-category {
+            margin-bottom: 48px;
+        }
+
+        .menu-category h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: #5a1e18;
+            text-align: center;
+            margin-bottom: 24px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #d97724;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .menu-card {
+            background-color: #ffffff;
+            border: 1px solid #e2d3c3;
+            border-radius: 10px;
+            padding: 16px;
+            margin: 4px 0;
+        }
+
+        .menu-card img {
+            width: 100%;
+            height: 185px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 14px;
+            background-color: #f2e6d8;
+        }
+
+        .menu-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 21px;
+            color: #2c1810;
+            margin-bottom: 8px;
+        }
+
+        .menu-card p {
+            font-size: 14px;
+            color: #5a4d46;
+            line-height: 1.55;
+            margin-bottom: 14px;
+        }
+
+        .price {
+            display: inline-block;
+            font-size: 16px;
+            font-weight: 600;
+            color: #b84a14;
+            background-color: rgb(217, 119, 36, 0.12);
+            padding: 4px 12px;
+            border-radius: 6px;
+            border: 1px solid rgb(217, 119, 36, 0.35);
+        }
+
+        #about {
+            background-color: #f7ede2;
+            border: 1px solid #e0cbb8;
+            border-radius: 10px;
+            padding: 34px 26px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #about h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: #5a1e18;
+            margin-bottom: 14px;
+        }
+
+        #about p {
+            max-width: 780px;
+            margin: 0 auto;
+            font-size: 15px;
+            color: #443731;
+            line-height: 1.75;
+        }
+
+        footer {
+            background-color: #2c1810;
+            color: #f5efe6;
+            text-align: center;
+            padding: 34px 20px;
+            margin-top: 45px;
+            border-top: 4px solid #d4af37;
+        }
+
+        footer h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: #f4c95d;
+            margin-bottom: 12px;
+        }
+
+        footer p {
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 6px;
+        }
+
+        .copyright {
+            margin-top: 18px;
+            padding-top: 16px;
+            border-top: 1px solid rgb(255, 255, 255, 0.18);
+            font-size: 13px;
+            color: #cbbba8;
+        }
+
+        @media (max-width: 900px) {
+            .menu-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 26px;
+            }
+
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>THE GREAT INDIAN KITCHEN</h1>
+        <p class="tagline">Authentic Flavors &amp; Traditional Recipes Crafted Fresh Daily</p>
+        <nav>
+            <a href="#menu">Menu</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main id="menu">
+
+        <section class="menu-category">
+            <h2>Starters</h2>
+            <div class="menu-grid">
+                <article class="menu-card">
+                    <img src="panner tikka.jpg" alt="Paneer Tikka" onerror="this.src='https://placehold.co/600x400/f2e6d8/5a1e18?text=Paneer+Tikka'">
+                    <h3>Paneer Tikka</h3>
+                    <p>Soft cottage cheese cubes marinated in yogurt and aromatic spices, roasted in a clay tandoor with crisp bell peppers.</p>
+                    <span class="price">₹260</span>
+                </article>
+
+                <article class="menu-card">
+                    <img src="vegetable samosa.jpg" alt="Vegetable Samosa Platter" onerror="this.src='https://placehold.co/600x400/f2e6d8/5a1e18?text=Vegetable+Samosa+Platter'">
+                    <h3>Vegetable Samosa Platter</h3>
+                    <p>Crisp golden pastry triangles stuffed with spiced potatoes and green peas, served with tamarind and mint chutneys.</p>
+                    <span class="price">₹180</span>
+                </article>
+
+                <article class="menu-card">
+                    <img src="Chicken Seekh Kebab.jpg" alt="Tandoori Chicken Wings" onerror="this.src='https://placehold.co/600x400/f2e6d8/5a1e18?text=Tandoori+Chicken+Wings'">
+                    <h3>Tandoori Chicken Wings</h3>
+                    <p>Juicy chicken wings marinated in Kashmiri chili, ginger, and garlic, char-grilled to smoky perfection.</p>
+                    <span class="price">₹320</span>
+                </article>
+            </div>
+        </section>
+
+        <section class="menu-category">
+            <h2>Main Course</h2>
+            <div class="menu-grid">
+                <article class="menu-card">
+                    <img src="Butter Chicken.jpg" alt="Butter Chicken Masala" onerror="this.src='https://placehold.co/600x400/f2e6d8/5a1e18?text=Butter+Chicken+Masala'">
+                    <h3>Butter Chicken Masala</h3>
+                    <p>Tender tandoori chicken pieces simmered in a velvety tomato, cashew, and butter gravy finished with fenugreek leaves.</p>
+                    <span class="price">₹420</span>
+                </article>
+
+                <article class="menu-card">
+                    <img src="Dal Makhani.jpg" alt="Dal Makhani" onerror="this.src='https://placehold.co/600x400/f2e6d8/5a1e18?text=Dal+Makhani'">
+                    <h3>Dal Makhani</h3>
+                    <p>Whole black lentils slow-cooked overnight over low embers with ginger, tomatoes, white butter, and fresh cream.</p>
+                    <span class="price">₹310</span>
+                </article>
+
+                <article class="menu-card">
+                    <img src="Hyderabadi Veg Dum Biryani.jpg" alt="Hyderabadi Veg Dum Biryani" onerror="this.src='https://placehold.co/600x400/f2e6d8/5a1e18?text=Hyderabadi+Veg+Dum+Biryani'">
+                    <h3>Hyderabadi Veg Dum Biryani</h3>
+                    <p>Fragrant aged basmati rice layered with garden vegetables, saffron milk, caramelized onions, and whole spices.</p>
+                    <span class="price">₹350</span>
+                </article>
+            </div>
+        </section>
+
+        <section class="menu-category">
+            <h2>Desserts</h2>
+            <div class="menu-grid">
+                <article class="menu-card">
+                    <img src="Gulab Jamun.jpg" alt="Gulab Jamun" onerror="this.src='https://placehold.co/600x400/f2e6d8/5a1e18?text=Gulab+Jamun'">
+                    <h3>Gulab Jamun</h3>
+                    <p>Warm, melt-in-the-mouth khoya dumplings soaked in fragrant rosewater and green cardamom sugar syrup.</p>
+                    <span class="price">₹160</span>
+                </article>
+
+                <article class="menu-card">
+                    <img src="Rasmalai.jpg" alt="Rasmalai" onerror="this.src='https://placehold.co/600x400/f2e6d8/5a1e18?text=Rasmalai'">
+                    <h3>Rasmalai</h3>
+                    <p>Delicate flattened paneer discs chilled in saffron-infused reduced milk and garnished with slivered pistachios.</p>
+                    <span class="price">₹190</span>
+                </article>
+
+                <article class="menu-card">
+                    <img src="Mango Kulfi.jpg" alt="Mango Kulfi" onerror="this.src='https://placehold.co/600x400/f2e6d8/5a1e18?text=Mango+Kulfi'">
+                    <h3>Mango Kulfi</h3>
+                    <p>Traditional slow-simmered Indian dairy ice cream blended with ripe Alphonso mango pulp and crushed cardamom.</p>
+                    <span class="price">₹180</span>
+                </article>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About Us</h2>
+            <p>
+                Founded with a passion for India's rich culinary heritage, The Great Indian Kitchen brings together
+                time-honored family recipes from across the subcontinent. Every morning, our chefs hand-roast and grind
+                whole spices in-house, slow-simmer our gravies from scratch, and bake fresh breads in our traditional
+                clay tandoor to serve you an authentic, unforgettable dining experience.
+            </p>
+        </section>
+
+    </main>
+
+    <footer id="contact">
+        <h3>The Great Indian Kitchen</h3>
+        <p>42 Jubilee Hills Road, Hyderabad, Telangana 500033</p>
+        <p>Open Daily: 11:30 AM – 11:00 PM</p>
+        <p class="copyright">&copy; 2026 The Great Indian Kitchen. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
